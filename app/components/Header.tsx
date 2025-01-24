@@ -74,9 +74,9 @@ export default function Header() {
             </button>
             <Button
               onClick={() => scrollTo("cta")}
-              className="bg-[#15233b] hover:bg-white text-white hover:text-[#15233b] font-semibold px-6 relative overflow-hidden group transition-colors duration-300"
+              className="bg-[#15233b] hover:bg-white text-white hover:text-[#15233b] font-semibold rounded-full px-6 relative overflow-hidden group transition-colors duration-300"
             >
-              <span className="relative z-10">Join Waitlist</span>
+              <span className="relative z-10 ">Join Waitlist</span>
             </Button>
           </nav>
 

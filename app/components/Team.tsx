@@ -7,25 +7,25 @@ const teamMembers = [
   {
     name: "Faraz Ghani",
     role: "Lead Developer",
-    image: "/faraz.png",
+    image: "/faraz.webp",
     rotation: -2,
   },
   {
     name: "Muhammad Daniyal",
     role: "Art Director",
-    image: "/daniyal.png",
+    image: "/daniyal.webp",
     rotation: 1,
   },
   {
     name: "Moiz Azam",
     role: "Game Designer",
-    image: "/moiz.png",
+    image: "/moiz.webp",
     rotation: -1,
   },
   {
     name: "Rafay",
     role: "Sound Engineer",
-    image: "/rafay.png",
+    image: "/rafay.webp",
     rotation: 2,
   },
 ]
@@ -33,7 +33,7 @@ const teamMembers = [
 const mentor = {
   name: "Dr. Rabeea Jaffari",
   role: "Mentor",
-  image: "/rabeea.png",
+  image: "/rabeea.webp",
   rotation: -1,
 }
 
