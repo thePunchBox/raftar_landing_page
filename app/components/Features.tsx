@@ -17,7 +17,7 @@ const features = [
   {
     icon: Gamepad2,
     title: "Immersive Gameplay",
-    description: "Experience realistic physics and stunning graphics powered by Unreal Engine 5",
+    description: "Experience realistic physics and stunning graphics powered by Unity",
   },
   {
     icon: Users,
@@ -27,7 +27,7 @@ const features = [
   {
     icon: Settings,
     title: "Deep Customization",
-    description: "Modify your vehicles with authentic Pakistani truck art and performance upgrades",
+    description: "Modify your vehicles with authentic Pakistani art and performance upgrades",
   },
   {
     icon: Trophy,

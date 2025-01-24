@@ -12,7 +12,7 @@ const faqs = [
   {
     question: "What platforms will Raftar be available on?",
     answer:
-      "We're initially targeting PC release, with plans to expand to consoles and mobile platforms in the future.",
+      "We're initially targeting Mobile platform release, with plans to expand to consoles and PC in the future.",
   },
   {
     question: "Will Raftar feature real Pakistani locations?",

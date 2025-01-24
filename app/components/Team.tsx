@@ -6,25 +6,26 @@ import Image from "next/image"
 const teamMembers = [
   {
     name: "Faraz Ghani",
-    role: "Lead Developer",
+    role: "Unity Specialist",
     image: "/faraz.webp",
     rotation: -2,
+    isFounder: true, // Added flag to differentiate Faraz
   },
   {
     name: "Muhammad Daniyal",
-    role: "Art Director",
+    role: "SEO Guy",
     image: "/daniyal.webp",
     rotation: 1,
   },
   {
     name: "Moiz Azam",
-    role: "Game Designer",
+    role: "Blender Expert",
     image: "/moiz.webp",
     rotation: -1,
   },
   {
     name: "Rafay",
-    role: "Sound Engineer",
+    role: "Developer",
     image: "/rafay.webp",
     rotation: 2,
   },
@@ -79,7 +80,9 @@ export default function Team() {
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-white">{member.name}</h3>
                 <p className="text-[#4CAF50] font-mono text-lg uppercase tracking-wider mb-2">{member.role}</p>
-                <p className="text-gray-300 font-medium">Co-founder</p>
+                <p className="text-gray-300 font-medium">
+                  {member.isFounder ? "Founder" : "Co-founder"}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -113,4 +116,3 @@ export default function Team() {
     </section>
   )
 }
-
