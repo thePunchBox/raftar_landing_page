@@ -48,7 +48,7 @@ export default function Hero() {
             <Button
               size="lg"
               className="bg-[#15233b] hover:bg-[#1e3354] text-white px-6 py-4 text-base md:text-lg font-bold rounded-full glow w-full sm:w-auto"
-              onClick={() => window.open("https://discord.gg/ud8HhRpV", "_blank")}
+              onClick={() => window.open("https://discord.com/invite/QUKdx7rvSs", "_blank")}
             >
               Join the Waitlist <ArrowRight className="ml-2" />
             </Button>
