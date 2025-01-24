@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function Story() {
   return (
-    <section className="py-20 px-4 relative">
+    <section id="story" className="py-20 px-4 relative">
       <div className="absolute inset-0 gradient-bg opacity-30" />
       <div className="container mx-auto max-w-6xl relative z-10">
         <motion.div

@@ -19,14 +19,17 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Ensure scroll happens after the page is hydrated
   const scrollTo = (id: string) => {
-    const element = document.getElementById(id)
-    if (element) {
-      const yOffset = -80 // Adjust this value based on your header height
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
-      window.scrollTo({ top: y, behavior: "smooth" })
-    }
-    setSheetOpen(false)
+    setTimeout(() => {
+      const element = document.getElementById(id)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" })
+      } else {
+        console.error(`Element with id "${id}" not found`)
+      }
+      setSheetOpen(false)
+    }, 100) // Small delay to allow client-side rendering to complete
   }
 
   return (
@@ -43,13 +46,13 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
             <button
-              onClick={() => scrollTo("about")}
+              onClick={() => scrollTo("story")}
               className={`${isScrolled ? "text-white" : "text-white"} hover:text-[#1e3354] transition-colors`}
             >
               About
             </button>
             <button
-              onClick={() => scrollTo("gameplay")}
+              onClick={() => scrollTo("features")}
               className={`${isScrolled ? "text-white" : "text-white"} hover:text-[#1e3354] transition-colors`}
             >
               Gameplay Features
@@ -73,18 +76,18 @@ export default function Header() {
               FAQ
             </button>
             <Button
-              onClick={() => scrollTo("cta")}
+              onClick={() => window.open("https://discord.gg/ud8HhRpV", "_blank")}
               className="bg-[#15233b] hover:bg-white text-white hover:text-[#15233b] font-semibold rounded-full px-6 relative overflow-hidden group transition-colors duration-300"
             >
-              <span className="relative z-10 ">Join Waitlist</span>
+              <span className="relative z-10">Join Waitlist</span>
             </Button>
           </nav>
 
           {/* Mobile Navigation */}
           <div className="flex items-center lg:hidden">
             <Button
-              onClick={() => scrollTo("cta")}
-              className="bg-[#15233b] hover:bg-white text-white hover:text-[#15233b] font-semibold px-4 py-2 text-sm mr-4 relative overflow-hidden group transition-colors duration-300"
+              onClick={() => window.open("https://discord.gg/ud8HhRpV", "_blank")}
+              className="bg-[#15233b] hover:bg-white text-white hover:text-[#15233b] font-semibold rounded-full px-4 py-2 text-sm mr-4 relative overflow-hidden group transition-colors duration-300"
             >
               <span className="relative z-10">Join Waitlist</span>
             </Button>
@@ -100,13 +103,13 @@ export default function Header() {
                 </SheetHeader>
                 <div className="flex flex-col space-y-4 mt-6">
                   <button
-                    onClick={() => scrollTo("about")}
+                    onClick={() => scrollTo("story")}
                     className="text-[#15233b] hover:text-[#1e3354] transition-colors"
                   >
                     About
                   </button>
                   <button
-                    onClick={() => scrollTo("gameplay")}
+                    onClick={() => scrollTo("features")}
                     className="text-[#15233b] hover:text-[#1e3354] transition-colors"
                   >
                     Gameplay Features
@@ -138,4 +141,3 @@ export default function Header() {
     </header>
   )
 }
-

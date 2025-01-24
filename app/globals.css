@@ -89,3 +89,6 @@ body {
   box-shadow: 0 20px 40px rgba(21, 35, 59, 0.5);
 }
 
+html{
+  scroll-behavior:smooth ;
+}

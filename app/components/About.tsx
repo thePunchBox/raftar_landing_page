@@ -53,7 +53,7 @@ const features: Feature[] = [
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-[#15233b]">
+    <section className="py-20 bg-[#15233b]">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, x: -50 }}

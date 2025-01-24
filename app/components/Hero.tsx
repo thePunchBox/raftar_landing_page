@@ -48,6 +48,7 @@ export default function Hero() {
             <Button
               size="lg"
               className="bg-[#15233b] hover:bg-[#1e3354] text-white px-6 py-4 text-base md:text-lg font-bold rounded-full glow w-full sm:w-auto"
+              onClick={() => window.open("https://discord.gg/ud8HhRpV", "_blank")}
             >
               Join the Waitlist <ArrowRight className="ml-2" />
             </Button>
@@ -55,6 +56,7 @@ export default function Hero() {
               size="lg"
               variant="outline"
               className="border-[#15233b] text-[#15233b] bg-white hover:bg-[#15233b] hover:text-white px-6 py-4 text-base md:text-lg font-bold rounded-full w-full sm:w-auto"
+              onClick={() => window.open("https://youtu.be/0kkWnswyhZc?si=Lj2U46VlADOWbwWp", "_blank")}
             >
               Watch Trailer
             </Button>
@@ -64,4 +66,3 @@ export default function Hero() {
     </section>
   )
 }
-
