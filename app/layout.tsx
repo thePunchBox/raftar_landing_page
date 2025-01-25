@@ -2,8 +2,8 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import ScrollToTopButton from "./components/ScrollToTop"
-
 const inter = Inter({ subsets: ["latin"] })
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: "Raftar - The Future of Pakistani Racing Games",
@@ -28,6 +28,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} grid-pattern`}>
         {children}
+        <Analytics />
         <ScrollToTopButton />
       </body>
     </html>
