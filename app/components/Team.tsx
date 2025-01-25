@@ -29,10 +29,10 @@ const teamMembers: TeamMember[] = [
     rotation: -2,
     isFounder: true,
     socials: {
-      facebook: "https://facebook.com/TheFarazghani",
-      instagram: "https://instagram.com/farazghani_",
-      linkedin: "https://linkedin.com/in/farazg",
-      email: "mailto:farazghani12@gmail.com",
+      facebook: "https://facebook.com/faraz",
+      instagram: "https://instagram.com/faraz",
+      linkedin: "https://linkedin.com/in/faraz",
+      email: "mailto:faraz@raftar.com",
     },
   },
   {
@@ -41,10 +41,10 @@ const teamMembers: TeamMember[] = [
     image: "/daniyal.webp",
     rotation: 1,
     socials: {
-      facebook: "https://facebook.com/muhammaddaniyalll",
-      instagram: "https://instagram.com/daniyyawl2.0",
-      linkedin: "https://linkedin.com/in/muhammaddaniyalll",
-      email: "mailto:mmuhammaddaniyal982@gmail.com",
+      facebook: "https://facebook.com/daniyal",
+      instagram: "https://instagram.com/daniyal",
+      linkedin: "https://linkedin.com/in/daniyal",
+      email: "mailto:daniyal@raftar.com",
     },
   },
   {
@@ -53,22 +53,22 @@ const teamMembers: TeamMember[] = [
     image: "/moiz.webp",
     rotation: -1,
     socials: {
-      facebook: "https://facebook.com/moiz.azam.10",
-      instagram: "https://instagram.com/moiz.azam121",
-      linkedin: "https://linkedin.com/in/moiz-azam-549435215",
+      facebook: "https://facebook.com/moiz",
+      instagram: "https://instagram.com/moiz",
+      linkedin: "https://linkedin.com/in/moiz",
       email: "mailto:moiz@raftar.com",
     },
   },
   {
     name: "Rafay",
-    role: "Developer",
+    role: "Code Ninja",
     image: "/rafay.webp",
     rotation: 2,
     socials: {
-      facebook: "https://facebook.com/profile.php?id=100010285934488",
-      instagram: "https://instagram.com/rafaybachani",
-      linkedin: "https://linkedin.com/in/rafayshakeel",
-      email: "mailto:rafayshakeelbachani@gmail.com",
+      facebook: "https://facebook.com/rafay",
+      instagram: "https://instagram.com/rafay",
+      linkedin: "https://linkedin.com/in/rafay",
+      email: "mailto:rafay@raftar.com",
     },
   },
 ]
@@ -79,8 +79,8 @@ const mentor: TeamMember = {
   image: "/rabeea.webp",
   rotation: -1,
   socials: {
-    linkedin: "https://linkedin.com/in/rabeeajaff",
-    email: "mailto:rabeea.jaffari@faculty.muet.edu.pk",
+    linkedin: "https://linkedin.com/in/rabeea",
+    email: "mailto:rabeea@raftar.com",
   },
 }
 
@@ -157,7 +157,7 @@ export default function Team() {
                   alt={member.name}
                   width={300}
                   height={300}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-64 object-contain bg-[#001e44]"
                 />
                 <div className="absolute top-0 right-0 bg-[#1e3354] px-4 py-1 transform translate-y-4 -rotate-2">
                   <span className="text-white font-bold tracking-wider">TEAM</span>

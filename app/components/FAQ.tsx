@@ -11,8 +11,7 @@ const faqs = [
   },
   {
     question: "What platforms will Raftar be available on?",
-    answer:
-      "We're initially targeting Mobile platform release, with plans to expand to consoles and PC in the future.",
+    answer: "We're initially targeting Mobile platform release, with plans to expand to consoles and PC in the future.",
   },
   {
     question: "Will Raftar feature real Pakistani locations?",
@@ -38,7 +37,7 @@ export default function FAQ() {
         >
           Frequently Asked Questions
         </motion.h2>
-        <div className="w-full max-w-2xl mx-auto">
+        <div className="w-full max-w-2xl mx-auto space-y-4">
           <Accordion type="single" collapsible>
             {faqs.map((faq, index) => (
               <motion.div
@@ -48,11 +47,16 @@ export default function FAQ() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="mb-4"
               >
-                <AccordionItem value={`item-${index}`} className="glassmorphism rounded-lg overflow-hidden">
-                  <AccordionTrigger className="text-white hover:text-[#1e3354] transition-colors px-6 py-4">
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="glassmorphism rounded-lg overflow-hidden mb-4 last:mb-0"
+                >
+                  <AccordionTrigger className="text-white hover:text-[#1e3354] transition-colors px-6 py-4 text-left">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-300 px-6 py-4">{faq.answer}</AccordionContent>
+                  <AccordionContent className="text-gray-300 px-6 py-4">
+                    <div className="text-left">{faq.answer}</div>
+                  </AccordionContent>
                 </AccordionItem>
               </motion.div>
             ))}

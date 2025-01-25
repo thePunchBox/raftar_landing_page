@@ -97,42 +97,44 @@ export default function Header() {
                   <Menu className="w-6 h-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent className="bg-white border-[#15233b]">
-                <SheetHeader>
-                  <SheetTitle className="text-[#15233b]">Menu</SheetTitle>
+              <SheetContent className="bg-[#15233b]/80 backdrop-blur-md border-[#15233b] text-white">
+                <SheetHeader className="text-center">
+                  <SheetTitle className="text-white text-2xl font-bold">Menu</SheetTitle>
                 </SheetHeader>
-                <div className="flex flex-col space-y-4 mt-6">
-                  <button
-                    onClick={() => scrollTo("story")}
-                    className="text-[#15233b] hover:text-[#1e3354] transition-colors"
-                  >
-                    About
-                  </button>
-                  <button
-                    onClick={() => scrollTo("features")}
-                    className="text-[#15233b] hover:text-[#1e3354] transition-colors"
-                  >
-                    Gameplay Features
-                  </button>
-                  <button
-                    onClick={() => scrollTo("roadmap")}
-                    className="text-[#15233b] hover:text-[#1e3354] transition-colors"
-                  >
-                    Roadmap
-                  </button>
-                  <button
-                    onClick={() => scrollTo("team")}
-                    className="text-[#15233b] hover:text-[#1e3354] transition-colors"
-                  >
-                    Team
-                  </button>
-                  <button
-                    onClick={() => scrollTo("faq")}
-                    className="text-[#15233b] hover:text-[#1e3354] transition-colors"
-                  >
-                    FAQ
-                  </button>
-                </div>
+                <nav className="flex flex-col h-full pt-12">
+                  <div className="space-y-4">
+                    <button
+                      onClick={() => scrollTo("story")}
+                      className="text-white hover:text-[#4CAF50] transition-colors text-base w-full text-left px-4 py-2"
+                    >
+                      About
+                    </button>
+                    <button
+                      onClick={() => scrollTo("features")}
+                      className="text-white hover:text-[#4CAF50] transition-colors text-base w-full text-left px-4 py-2"
+                    >
+                      Gameplay Features
+                    </button>
+                    <button
+                      onClick={() => scrollTo("roadmap")}
+                      className="text-white hover:text-[#4CAF50] transition-colors text-base w-full text-left px-4 py-2"
+                    >
+                      Roadmap
+                    </button>
+                    <button
+                      onClick={() => scrollTo("team")}
+                      className="text-white hover:text-[#4CAF50] transition-colors text-base w-full text-left px-4 py-2"
+                    >
+                      Team
+                    </button>
+                    <button
+                      onClick={() => scrollTo("faq")}
+                      className="text-white hover:text-[#4CAF50] transition-colors text-base w-full text-left px-4 py-2"
+                    >
+                      FAQ
+                    </button>
+                  </div>
+                </nav>
               </SheetContent>
             </Sheet>
           </div>
@@ -141,3 +143,4 @@ export default function Header() {
     </header>
   )
 }
+
