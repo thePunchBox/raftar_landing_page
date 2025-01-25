@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
+import { Facebook, Instagram, Linkedin, Twitter, Mail } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -9,10 +10,43 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start gap-8">
           <div className="md:w-1/3">
             <Image src="/logo.png" alt="Raftar Logo" width={100} height={32} className="h-12 w-auto mb-4" />
-            <p className=" text-gray-400 mb-4">
+            <p className="text-gray-400 mb-4">
               Experience the thrill of racing through iconic Pakistani streets with Raftar!
             </p>
-            <p className="text-sm text-gray-500">© Copyright 2025 Raftar. All Rights Reserved.</p>
+            <p className="text-sm text-gray-500 mb-4">© Copyright 2025 Raftar. All Rights Reserved.</p>
+            <div className="flex space-x-4">
+              <Link
+                href="https://facebook.com/playyraftar"
+                target="_blank"
+                className="text-gray-400 hover:text-[#4267B2] transition-colors"
+              >
+                <Facebook className="w-5 h-5" />
+              </Link>
+              <Link
+                href="https://instagram.com/playraftar"
+                target="_blank"
+                className="text-gray-400 hover:text-[#E1306C] transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+              </Link>
+              <Link
+                href="https://linkedin.com.compnay/playraftar"
+                target="_blank"
+                className="text-gray-400 hover:text-[#0077B5] transition-colors"
+              >
+                <Linkedin className="w-5 h-5" />
+              </Link>
+              <Link
+                href="https://twitter.com/playraftar"
+                target="_blank"
+                className="text-gray-400 hover:text-[#1DA1F2] transition-colors"
+              >
+                <Twitter className="w-5 h-5" />
+              </Link>
+              <Link href="mailto:info@playraftar.com" className="text-gray-400 hover:text-[#EA4335] transition-colors">
+                <Mail className="w-5 h-5" />
+              </Link>
+            </div>
           </div>
 
           <div className="flex gap-16 md:w-1/3 justify-end">
@@ -20,12 +54,12 @@ export default function Footer() {
               <h3 className="text-lg font-semibold mb-4 text-white">About</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/blog" className=" text-gray-400 hover:text-white transition-colors">
+                  <Link href="/blog" className="text-gray-400 hover:text-white transition-colors">
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className=" text-gray-400 hover:text-white transition-colors">
+                  <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
                     Contact
                   </Link>
                 </li>
@@ -36,7 +70,10 @@ export default function Footer() {
               <h3 className="text-lg font-semibold mb-4 text-white">Community</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="https://discord.com/invite/QUKdx7rvSs" className=" text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href="https://discord.com/invite/QUKdx7rvSs"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     Join Discord
                   </Link>
                 </li>
@@ -47,17 +84,17 @@ export default function Footer() {
               <h3 className="text-lg font-semibold mb-4 text-white">Legal</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/terms" className=" text-gray-400 hover:text-white transition-colors whitespace-nowrap">
+                  <Link href="/terms" className="text-gray-400 hover:text-white transition-colors whitespace-nowrap">
                     Terms of Service
                   </Link>
                 </li>
                 <li>
-                  <Link href="/privacy" className=" text-gray-400 hover:text-white transition-colors">
+                  <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/cookies" className=" text-gray-400 hover:text-white transition-colors">
+                  <Link href="/cookies" className="text-gray-400 hover:text-white transition-colors">
                     Cookie Policy
                   </Link>
                 </li>
@@ -69,3 +106,4 @@ export default function Footer() {
     </footer>
   )
 }
+

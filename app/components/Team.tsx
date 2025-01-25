@@ -2,41 +2,127 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { Facebook, Instagram, Linkedin, Mail } from "lucide-react"
+import Link from "next/link"
 
-const teamMembers = [
+interface SocialLinks {
+  facebook?: string
+  instagram?: string
+  linkedin?: string
+  email?: string
+}
+
+interface TeamMember {
+  name: string
+  role: string
+  image: string
+  rotation: number
+  isFounder?: boolean
+  socials: SocialLinks
+}
+
+const teamMembers: TeamMember[] = [
   {
     name: "Faraz Ghani",
     role: "Unity Specialist",
     image: "/faraz.webp",
     rotation: -2,
-    isFounder: true, // Added flag to differentiate Faraz
+    isFounder: true,
+    socials: {
+      facebook: "https://facebook.com/TheFarazghani",
+      instagram: "https://instagram.com/farazghani_",
+      linkedin: "https://linkedin.com/in/farazg",
+      email: "mailto:farazghani12@gmail.com",
+    },
   },
   {
     name: "Muhammad Daniyal",
     role: "SEO Guy",
     image: "/daniyal.webp",
     rotation: 1,
+    socials: {
+      facebook: "https://facebook.com/muhammaddaniyalll",
+      instagram: "https://instagram.com/daniyyawl2.0",
+      linkedin: "https://linkedin.com/in/muhammaddaniyalll",
+      email: "mailto:mmuhammaddaniyal982@gmail.com",
+    },
   },
   {
     name: "Moiz Azam",
     role: "Blender Expert",
     image: "/moiz.webp",
     rotation: -1,
+    socials: {
+      facebook: "https://facebook.com/moiz.azam.10",
+      instagram: "https://instagram.com/moiz.azam121",
+      linkedin: "https://linkedin.com/in/moiz-azam-549435215",
+      email: "mailto:moiz@raftar.com",
+    },
   },
   {
     name: "Rafay",
     role: "Developer",
     image: "/rafay.webp",
     rotation: 2,
+    socials: {
+      facebook: "https://facebook.com/profile.php?id=100010285934488",
+      instagram: "https://instagram.com/rafaybachani",
+      linkedin: "https://linkedin.com/in/rafayshakeel",
+      email: "mailto:rafayshakeelbachani@gmail.com",
+    },
   },
 ]
 
-const mentor = {
+const mentor: TeamMember = {
   name: "Dr. Rabeea Jaffari",
   role: "Mentor",
   image: "/rabeea.webp",
   rotation: -1,
+  socials: {
+    linkedin: "https://linkedin.com/in/rabeeajaff",
+    email: "mailto:rabeea.jaffari@faculty.muet.edu.pk",
+  },
 }
+
+const SocialIcons = ({ socials }: { socials: SocialLinks }) => (
+  <div className="flex justify-center space-x-3 mt-4">
+    {socials.facebook && (
+      <Link
+        href={socials.facebook}
+        target="_blank"
+        className="text-gray-400 hover:text-[#4267B2] transition-colors transform hover:scale-110"
+      >
+        <Facebook className="w-5 h-5" />
+      </Link>
+    )}
+    {socials.instagram && (
+      <Link
+        href={socials.instagram}
+        target="_blank"
+        className="text-gray-400 hover:text-[#E1306C] transition-colors transform hover:scale-110"
+      >
+        <Instagram className="w-5 h-5" />
+      </Link>
+    )}
+    {socials.linkedin && (
+      <Link
+        href={socials.linkedin}
+        target="_blank"
+        className="text-gray-400 hover:text-[#0077B5] transition-colors transform hover:scale-110"
+      >
+        <Linkedin className="w-5 h-5" />
+      </Link>
+    )}
+    {socials.email && (
+      <Link
+        href={socials.email}
+        className="text-gray-400 hover:text-[#EA4335] transition-colors transform hover:scale-110"
+      >
+        <Mail className="w-5 h-5" />
+      </Link>
+    )}
+  </div>
+)
 
 export default function Team() {
   return (
@@ -80,9 +166,8 @@ export default function Team() {
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-white">{member.name}</h3>
                 <p className="text-[#4CAF50] font-mono text-lg uppercase tracking-wider mb-2">{member.role}</p>
-                <p className="text-gray-300 font-medium">
-                  {member.isFounder ? "Founder" : "Co-founder"}
-                </p>
+                <p className="text-gray-300 font-medium">{member.isFounder ? "Founder" : "Co-founder"}</p>
+                <SocialIcons socials={member.socials} />
               </div>
             </motion.div>
           ))}
@@ -110,9 +195,11 @@ export default function Team() {
           <div className="p-6">
             <h3 className="text-xl font-bold mb-2 text-white">{mentor.name}</h3>
             <p className="text-[#4CAF50] font-mono text-lg uppercase tracking-wider mb-2">{mentor.role}</p>
+            <SocialIcons socials={mentor.socials} />
           </div>
         </motion.div>
       </div>
     </section>
   )
 }
+
