@@ -29,10 +29,10 @@ const teamMembers: TeamMember[] = [
     rotation: -2,
     isFounder: true,
     socials: {
-      facebook: "https://facebook.com/faraz",
-      instagram: "https://instagram.com/faraz",
-      linkedin: "https://linkedin.com/in/faraz",
-      email: "mailto:faraz@raftar.com",
+      facebook: "https://www.facebook.com/TheFarazghani/",
+      instagram: "https://www.instagram.com/Farazghani_",
+      linkedin: "https://www.linkedin.com/in/farazg/",
+      email: "mailto:farazghani12@gmail.com",
     },
   },
   {
@@ -41,10 +41,10 @@ const teamMembers: TeamMember[] = [
     image: "/daniyal.webp",
     rotation: 1,
     socials: {
-      facebook: "https://facebook.com/daniyal",
-      instagram: "https://instagram.com/daniyal",
-      linkedin: "https://linkedin.com/in/daniyal",
-      email: "mailto:daniyal@raftar.com",
+      facebook: "https://facebook.com/muhammaddaniyalll",
+      instagram: "https://instagram.com/daniyyawl2.0",
+      linkedin: "https://www.linkedin.com/in/muhammaddaniyalll/",
+      email: "mailto:muhammaddaniyal982@gmail.com",
     },
   },
   {
@@ -53,9 +53,9 @@ const teamMembers: TeamMember[] = [
     image: "/moiz.webp",
     rotation: -1,
     socials: {
-      facebook: "https://facebook.com/moiz",
-      instagram: "https://instagram.com/moiz",
-      linkedin: "https://linkedin.com/in/moiz",
+      facebook: "https://facebook.com/moiz.azam.10",
+      instagram: "https://instagram.com/moiz.azam121",
+      linkedin: "https://www.linkedin.com/in/moiz-azam-549435215/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       email: "mailto:moiz@raftar.com",
     },
   },
@@ -65,10 +65,10 @@ const teamMembers: TeamMember[] = [
     image: "/rafay.webp",
     rotation: 2,
     socials: {
-      facebook: "https://facebook.com/rafay",
-      instagram: "https://instagram.com/rafay",
-      linkedin: "https://linkedin.com/in/rafay",
-      email: "mailto:rafay@raftar.com",
+      facebook: "https://www.facebook.com/profile.php?id=100010285934488",
+      instagram: "https://instagram.com/rafaybachani",
+      linkedin: "https://linkedin.com/in/rafayshakeel",
+      email: "mailto:rafayshakeelbachani@gmail.com",
     },
   },
 ]
@@ -79,13 +79,13 @@ const mentor: TeamMember = {
   image: "/rabeea.webp",
   rotation: -1,
   socials: {
-    linkedin: "https://linkedin.com/in/rabeea",
-    email: "mailto:rabeea@raftar.com",
+    linkedin: "https://www.linkedin.com/in/rabeeajaff",
+    email: "mailto:rabeea.jaffari@faculty.muet.edu.pk",
   },
 }
 
 const SocialIcons = ({ socials }: { socials: SocialLinks }) => (
-  <div className="flex justify-center space-x-3 mt-4">
+  <div className="flex justify-center md:justify-start space-x-3 mt-4">
     {socials.facebook && (
       <Link
         href={socials.facebook}
