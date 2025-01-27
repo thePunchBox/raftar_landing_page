@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
-const screenshots = ["/ss1.png", "/ss1.png", "/ss1.png", "/ss1.png"]
+const screenshots = ["/ss2.png", "/ss3.png", "/ss4.png", "/ss5.png"]
 
 export default function GameplayShowcase() {
   return (

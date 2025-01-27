@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Menu, Info, Gamepad, Map, Users, HelpCircle, Facebook, Instagram, Linkedin, Twitter, Mail } from "lucide-react"
+import { Menu } from "lucide-react"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 
 export default function Header() {
@@ -19,30 +19,18 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Ensure scroll happens after the page is hydrated
   const scrollTo = (id: string) => {
-    const element = document.getElementById(id)
-    if (element) {
-      // Smooth scroll and ensure menu closes after scrolling is completed
-      element.scrollIntoView({ behavior: "smooth", block: "start" })
-      setTimeout(() => setSheetOpen(false), 500) // Delay closing to prevent reset
-    }
+    setTimeout(() => {
+      const element = document.getElementById(id)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" })
+      } else {
+        console.error(`Element with id "${id}" not found`)
+      }
+      setSheetOpen(false)
+    }, 100) // Small delay to allow client-side rendering to complete
   }
-
-  const menuItems = [
-    { id: "story", label: "About", icon: Info },
-    { id: "features", label: "Gameplay Features", icon: Gamepad },
-    { id: "roadmap", label: "Roadmap", icon: Map },
-    { id: "team", label: "Team", icon: Users },
-    { id: "faq", label: "FAQ", icon: HelpCircle },
-  ]
-
-  const socialItems = [
-    { label: "Facebook", icon: Facebook, href: "https://facebook.com/playyraftar" },
-    { label: "Instagram", icon: Instagram, href: "https://instagram.com/playraftar" },
-    { label: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/company/playraftar" },
-    { label: "Twitter", icon: Twitter, href: "https://twitter.com/playraftar" },
-    { label: "Email", icon: Mail, href: "mailto:info@playraftar.com" },
-  ]
 
   return (
     <header
@@ -51,21 +39,42 @@ export default function Header() {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
-          <Link href="/" className="text-[#15233b] relative z-10">
+          <Link href="/" className="text-[#15233b]">
             <Image src="/logo.png" alt="Raftar Logo" width={100} height={32} className="h-8 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
-            {menuItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollTo(item.id)}
-                className={`${isScrolled ? "text-white" : "text-white"} hover:text-[#1e3354] transition-colors`}
-              >
-                {item.label}
-              </button>
-            ))}
+            <button
+              onClick={() => scrollTo("story")}
+              className={`${isScrolled ? "text-white" : "text-white"} hover:text-[#1e3354] transition-colors`}
+            >
+              About
+            </button>
+            <button
+              onClick={() => scrollTo("features")}
+              className={`${isScrolled ? "text-white" : "text-white"} hover:text-[#1e3354] transition-colors`}
+            >
+              Gameplay Features
+            </button>
+            <button
+              onClick={() => scrollTo("roadmap")}
+              className={`${isScrolled ? "text-white" : "text-white"} hover:text-[#1e3354] transition-colors`}
+            >
+              Roadmap
+            </button>
+            <button
+              onClick={() => scrollTo("team")}
+              className={`${isScrolled ? "text-white" : "text-white"} hover:text-[#1e3354] transition-colors`}
+            >
+              Team
+            </button>
+            <button
+              onClick={() => scrollTo("faq")}
+              className={`${isScrolled ? "text-white" : "text-white"} hover:text-[#1e3354] transition-colors`}
+            >
+              FAQ
+            </button>
             <Button
               onClick={() => window.open("https://discord.com/invite/QUKdx7rvSs", "_blank")}
               className="bg-[#15233b] hover:bg-white text-white hover:text-[#15233b] font-semibold rounded-full px-6 relative overflow-hidden group transition-colors duration-300"
@@ -94,38 +103,36 @@ export default function Header() {
                 </SheetHeader>
                 <nav className="flex flex-col h-full pt-12">
                   <div className="space-y-4">
-                    {menuItems.map((item) => {
-                      const Icon = item.icon
-                      return (
-                        <button
-                          key={item.id}
-                          onClick={() => scrollTo(item.id)}
-                          className="text-white hover:text-[#4CAF50] transition-colors text-base w-full text-left px-4 py-2 flex items-center gap-3"
-                        >
-                          <Icon className="w-5 h-5" />
-                          {item.label}
-                        </button>
-                      )
-                    })}
-                  </div>
-                  <div className="mt-8 pt-8 border-t border-white/20">
-                    <h3 className="text-white text-lg font-semibold mb-4 px-4">Connect with us</h3>
-                    <div className="flex justify-between px-4">
-                      {socialItems.map((item, index) => {
-                        const Icon = item.icon
-                        return (
-                          <Link
-                            key={index}
-                            href={item.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-white hover:text-[#4CAF50] transition-colors p-2"
-                          >
-                            <Icon className="w-5 h-5" />
-                          </Link>
-                        )
-                      })}
-                    </div>
+                    <button
+                      onClick={() => scrollTo("story")}
+                      className="text-white hover:text-[#4CAF50] transition-colors text-base w-full text-left px-4 py-2"
+                    >
+                      About
+                    </button>
+                    <button
+                      onClick={() => scrollTo("features")}
+                      className="text-white hover:text-[#4CAF50] transition-colors text-base w-full text-left px-4 py-2"
+                    >
+                      Gameplay Features
+                    </button>
+                    <button
+                      onClick={() => scrollTo("roadmap")}
+                      className="text-white hover:text-[#4CAF50] transition-colors text-base w-full text-left px-4 py-2"
+                    >
+                      Roadmap
+                    </button>
+                    <button
+                      onClick={() => scrollTo("team")}
+                      className="text-white hover:text-[#4CAF50] transition-colors text-base w-full text-left px-4 py-2"
+                    >
+                      Team
+                    </button>
+                    <button
+                      onClick={() => scrollTo("faq")}
+                      className="text-white hover:text-[#4CAF50] transition-colors text-base w-full text-left px-4 py-2"
+                    >
+                      FAQ
+                    </button>
                   </div>
                 </nav>
               </SheetContent>
@@ -136,3 +143,4 @@ export default function Header() {
     </header>
   )
 }
+

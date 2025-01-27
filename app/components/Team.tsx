@@ -56,7 +56,7 @@ const teamMembers: TeamMember[] = [
       facebook: "https://facebook.com/moiz.azam.10",
       instagram: "https://instagram.com/moiz.azam121",
       linkedin: "https://www.linkedin.com/in/moiz-azam-549435215/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-      email: "mailto:moiz@raftar.com",
+      email: "mailto:Moiz89061@gmail.com",
     },
   },
   {
