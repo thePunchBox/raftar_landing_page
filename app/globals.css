@@ -39,6 +39,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch; /* Added from updates */
 }
 
 /* Improve animation performance */
@@ -130,6 +131,19 @@ body {
   }
 
   .framer-motion-chunk {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+  }
+  * {
+    -webkit-tap-highlight-color: transparent; /* Added from updates */
+  }
+  .animate-on-scroll {
+    /* Added from updates, but already present */
+    will-change: transform, opacity;
+    transform: translateZ(0);
+  }
+  .framer-motion-chunk {
+    /* Added from updates, but already present */
     will-change: transform, opacity;
     transform: translateZ(0);
   }

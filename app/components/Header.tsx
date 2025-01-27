@@ -20,13 +20,12 @@ export default function Header() {
   }, [])
 
   const scrollTo = (id: string) => {
-    setTimeout(() => {
-      const element = document.getElementById(id)
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" })
-      }
-      setSheetOpen(false)
-    }, 100)
+    const element = document.getElementById(id)
+    if (element) {
+      // Smooth scroll and ensure menu closes after scrolling is completed
+      element.scrollIntoView({ behavior: "smooth", block: "start" })
+      setTimeout(() => setSheetOpen(false), 500) // Delay closing to prevent reset
+    }
   }
 
   const menuItems = [
@@ -38,11 +37,11 @@ export default function Header() {
   ]
 
   const socialItems = [
-    { label: "Facebook", icon: Facebook, href: "https://facebook.com" },
-    { label: "Instagram", icon: Instagram, href: "https://instagram.com" },
-    { label: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
-    { label: "Twitter", icon: Twitter, href: "https://twitter.com" },
-    { label: "Email", icon: Mail, href: "mailto:contact@raftar.com" },
+    { label: "Facebook", icon: Facebook, href: "https://facebook.com/playyraftar" },
+    { label: "Instagram", icon: Instagram, href: "https://instagram.com/playraftar" },
+    { label: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/company/playraftar" },
+    { label: "Twitter", icon: Twitter, href: "https://twitter.com/playraftar" },
+    { label: "Email", icon: Mail, href: "mailto:info@playraftar.com" },
   ]
 
   return (
@@ -137,4 +136,3 @@ export default function Header() {
     </header>
   )
 }
-
